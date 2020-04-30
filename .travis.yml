@@ -1,0 +1,17 @@
+git:
+  submodules: false
+
+jobs:
+  include:
+    - os: windows
+      name: Windows Build
+      script:
+        - choco install adoptopenjdk
+        - powershell ./build.bat 
+      
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    - language: bash
+    - bash scripts/deploy.sh

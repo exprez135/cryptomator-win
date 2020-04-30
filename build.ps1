@@ -31,7 +31,7 @@ Remove-Item -Recurse -ErrorAction Ignore -Force buildkit.zip, app, libs, runtime
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 # download and extract buildkit
-$buildkitUrl = "https://github.com/cryptomator/cryptomator/releases/download/${upstreamVersion}/buildkit-win.zip"
+$buildkitUrl = "https://git.sr.ht/~exprez135/cryptomator-libre/refs/v1.5.3-libre/buildkit-win.zip"
 $wc = New-Object System.Net.WebClient
 Write-Output "Downloading ${buildkitUrl}..."
 $wc.Downloadfile($buildkitUrl, "buildkit.zip")
